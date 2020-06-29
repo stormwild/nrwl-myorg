@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-interface Todo {
-  title: string;
-}
+import { Todo } from '@myorg/data';
 
 export const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -26,16 +23,16 @@ export const App = () => {
 
   return (
     <>
-    <h1>Todos</h1>
-    <ul>
-      {todos.map((t) => (
-        <li className={'todo'}>{t.title}</li>
-      ))}
-    </ul>
-    <button id={'add-todo'} onClick={addTodo}>
+      <h1>Todos</h1>
+      <ul>
+        {todos.map((t) => (
+          <li className={'todo'}>{t.title}</li>
+        ))}
+      </ul>
+      <button id={'add-todo'} onClick={addTodo}>
         Add Todo
       </button>
-  </>
+    </>
   );
 };
 
